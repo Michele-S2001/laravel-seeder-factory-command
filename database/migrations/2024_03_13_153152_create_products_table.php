@@ -17,9 +17,10 @@ return new class extends Migration
       $table->foreign('category_id')->references('id')->on('categories');
       $table->string('name');
       $table->text('description');
+      $table->string('url');
       $table->char('ean', length: 13)->unique();
       $table->double('price', 6, 2, true);
-      $table->unsignedTinyInteger('featured')->default(0);
+      $table->unsignedTinyInteger('is_featured')->default(0);
       $table->timestamps();
     });
   }
