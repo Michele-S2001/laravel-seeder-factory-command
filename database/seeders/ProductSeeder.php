@@ -15,9 +15,10 @@ class ProductSeeder extends Seeder
    */
   public function run(Faker $faker): void
   {
+    Product::factory( count: 5 )->create();
 
-    $categories_ids = Category::all()->pluck('id');
-
+    //$categories_ids = Category::all()->pluck('id');
+    /*
     for($i = 0; $i < 100; $i++) {
       $isFeatured = $i < 5 ? 1 : 0;
 
@@ -33,5 +34,6 @@ class ProductSeeder extends Seeder
 
       $new_product->save();
     }
+    */
   }
 }
